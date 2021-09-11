@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="82dp"
+    android:layout_height="82dp">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/hourlyTime"
+        android:layout_width="match_parent"
+        android:layout_height="24dp"
+        android:textAlignment="center"
+        android:textColor="@color/white"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/hourlyImage"
+        android:layout_width="match_parent"
+        android:layout_height="34dp"
+        android:padding="5dp"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/hourlyTemp"
+        android:layout_width="match_parent"
+        android:layout_height="24dp"
+        android:textAlignment="center"
+        android:textColor="@color/white" />
+</LinearLayout>

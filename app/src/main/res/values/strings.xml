@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">KittenWeather</string>
+    <string name="choose_city">Choose city</string>
 </resources>

@@ -1,7 +1,8 @@
-package ru.maxim.kittenweather
+package ru.maxim.kittenweather.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import ru.maxim.kittenweather.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
