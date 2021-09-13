@@ -5,7 +5,9 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import ru.maxim.kittenweather.R
 import ru.maxim.kittenweather.databinding.ActivityMainBinding
+import ru.maxim.kittenweather.databinding.ItemDailyWeatherBinding
 import ru.maxim.kittenweather.databinding.ItemHourlyWeatherBinding
+import ru.maxim.kittenweather.model.DailyWeather
 import ru.maxim.kittenweather.model.WeatherUnit
 import java.text.SimpleDateFormat
 import java.util.*
@@ -21,8 +23,25 @@ class MainActivity : AppCompatActivity() {
         val model: WeatherViewModel by viewModels()
         model.getWeather().observe(this, { response ->
             binding?.temp?.text = getString(R.string.temp_placeholder, response.current.temp.toInt())
+            binding?.description?.text = response.current.weather.first().description
             fillHourlyTemp(response.hourly)
+            fillDailyTemp(response.daily)
         })
+    }
+
+    private fun fillDailyTemp(daily: ArrayList<DailyWeather>) {
+        val dayOfWeekFormat = SimpleDateFormat("EE", Locale.getDefault())
+        daily.forEach {
+            val dailyViewBinding = ItemDailyWeatherBinding.inflate(
+                layoutInflater,
+                binding?.dailyWeatherHolder,
+                true
+            )
+            dailyViewBinding.dailyDay.text = dayOfWeekFormat.format(Date(it.dt * 1000))
+            dailyViewBinding.dailyDayTemp.text = getString(R.string.temp_placeholder, it.temp.day.toInt())
+            dailyViewBinding.dailyNightTemp.text = getString(R.string.temp_placeholder,it.temp.night.toInt())
+            dailyViewBinding.dailyImage.setImageResource(getIconByWeather(it.weather.first().id))
+        }
     }
 
     private fun fillHourlyTemp(hourly: ArrayList<WeatherUnit>) {
