@@ -1,14 +1,13 @@
 package ru.maxim.kittenweather.model.response
 
 import ru.maxim.kittenweather.model.DailyWeather
-import ru.maxim.kittenweather.model.HourlyWeather
-import ru.maxim.kittenweather.model.Weather
+import ru.maxim.kittenweather.model.WeatherUnit
 
 data class WeatherResponse(
-    val lat: Float,
-    val lon: Float,
+    val lat: Double,
+    val lon: Double,
     val timezone: String,
-    val current: Weather,
-    val hourly: ArrayList<HourlyWeather>,
+    val current: WeatherUnit,
+    val hourly: ArrayList<WeatherUnit>,
     val daily: ArrayList<DailyWeather>
 )

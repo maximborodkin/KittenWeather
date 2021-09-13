@@ -5,14 +5,14 @@ data class DailyWeather(
     val temp: DailyTemp,
     val pressure: Int,
     val clouds: Int,
-    val weather: Weather
+    val weather: ArrayList<Weather>
 ) {
-    data class DailyTemp (
-        val day: Float,
-        val min: Float,
-        val max: Float,
-        val night: Float,
-        val eve: Float,
-        val morn: Float
-    )
 }
+    data class DailyTemp (
+        val day: Double,
+        val min: Double,
+        val max: Double,
+        val night: Double,
+        val eve: Double,
+        val morn: Double
+    )

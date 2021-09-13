@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">KittenWeather</string>
     <string name="choose_city">Choose city</string>
+    <string name="temp_placeholder">%d°C</string>
 </resources>

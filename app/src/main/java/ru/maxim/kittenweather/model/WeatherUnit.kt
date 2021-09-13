@@ -1,10 +1,9 @@
 package ru.maxim.kittenweather.model
 
-data class HourlyWeather (
+data class WeatherUnit (
     val dt: Long,
-    val temp: Float,
+    val temp: Double,
     val pressure: Int,
     val clouds: Int,
-    val weather: Weather
+    val weather: ArrayList<Weather>
 )
-
